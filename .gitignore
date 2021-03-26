@@ -1,0 +1,4 @@
+# ignore build files
+js
+# ignore node modules
+node_modules
