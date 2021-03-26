@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "typescript sandbox",
   "main": "index.html",
-  "scripts": {
-    "build": "tsc --build --verbose tsconfig.json"
-  },
+  "scripts": {},
   "author": "amadeusz-chomiak",
   "license": "UNLICENSED",
   "dependencies": {
