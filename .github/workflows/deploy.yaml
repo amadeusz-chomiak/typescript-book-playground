@@ -14,15 +14,15 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@master
 
-      - name: Install 🔧
-        run: npm ci
+      # - name: Install 🔧
+      #   run: npm ci
 
-      - name: Build 🔧
-        run: npm run build
+      # - name: Build 🔧
+      #   run: npm run build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: sterlingwes/gh-pages-deploy-action@v1.1
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: . # Root
-          clean: false
+          access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          source-directory: . # Root
+          build-command: npm ci && npm run build
