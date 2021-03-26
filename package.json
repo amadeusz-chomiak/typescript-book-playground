@@ -4,7 +4,7 @@
   "description": "typescript sandbox",
   "main": "index.html",
   "scripts": {
-    "build": "tsc --build tsconfig.json"
+    "build": "tsc --build --verbose tsconfig.json"
   },
   "author": "amadeusz-chomiak",
   "license": "UNLICENSED",
