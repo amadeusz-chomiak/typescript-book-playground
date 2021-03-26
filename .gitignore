@@ -1,4 +1,5 @@
 # ignore build files
-js
+js/build
+tsconfig.tsbuildinfo
 # ignore node modules
 node_modules

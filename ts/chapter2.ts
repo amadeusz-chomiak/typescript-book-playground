@@ -148,7 +148,7 @@ createChapter(chapter2, () => {
       );
       log("cakeWithCandles('apple pie', 15)", cakeWithCandles('apple pie', 15));
     });
-
+ 
     test('Type alias', 90, () => {
       type candle = string | number;
       const cakeWithCandles = (cake: string, candles: candle): string => {

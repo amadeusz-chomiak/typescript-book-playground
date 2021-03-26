@@ -5,11 +5,11 @@ chapter5.create(() => {
         logWarning('It will not prevent from sending different variable type on run time')
         logImportant('It only show compiler promise of sended type')
         log(unknownArray)
-    })
+    }) 
     test('local object declaration (namespace) | module', '175 - 177', () => {
         log('unknownObject.getDragon()', unknownObject.getDragon('gold'))
     })
     test('Rest cookbook list in book', '181 - 185', () => {
         logImportant('Look in book')
     })
-})
+}) 
