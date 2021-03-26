@@ -45,16 +45,16 @@ const logCodeTypescript = (...msgs: any[]) => {
 }
 //selection creators
 const logSection = (sectionName: string, bookPage: string | number): void => {
-    console.groupCollapsed(`%cTest ${sectionName} %cStr. ${bookPage}`, 'color: #3E8F00; font-size: 1.05rem', 'color: #747574');
+    console.groupCollapsed(`%cTest ${sectionName} %cPage ${bookPage}`, 'color: #3E8F00; font-size: 1.05rem', 'color: #747574');
 }
 const logSectionGroup = (sectionName: string, bookPage: string | number): void => {
-    console.groupCollapsed(`%c#Tests ${sectionName} %cStr. ${bookPage}`, 'color: #3E8F00; font-size: 1.2rem', 'color: #747574');
+    console.groupCollapsed(`%c#Tests ${sectionName} %cPage ${bookPage}`, 'color: #3E8F00; font-size: 1.2rem', 'color: #747574');
 }
 const logChapterSection = (chapter: Chapter): void => {
-    console.groupCollapsed(`%cCh. ${chapter.id} ${chapter.name} %cStr. ${chapter.bookPage}`, 'color: #B95000; font-size: 1.5rem; font-weight: bold;', 'color: #747574; font-size: 1.05rem');
+    console.groupCollapsed(`%cCh. ${chapter.id} ${chapter.name} %cPage ${chapter.bookPage}`, 'color: #B95000; font-size: 1.5rem; font-weight: bold;', 'color: #747574; font-size: 1.05rem');
 }
 const logAsyncSection = (chapter: Chapter, testObj: TestObj): void => {
-    console.groupCollapsed(`%cAsync: ${testObj.name} Ch. ${chapter.id} ${chapter.name} %cStr. ${testObj.bookPage}`, 'color: #B95060; font-size: 0.85rem', 'color: #747574; font-size: 0.70rem');
+    console.groupCollapsed(`%cAsync: ${testObj.name} Ch. ${chapter.id} ${chapter.name} %cPage ${testObj.bookPage}`, 'color: #B95060; font-size: 0.85rem', 'color: #747574; font-size: 0.70rem');
 }
 const logSectionCode = (title: string): void => {
     console.groupCollapsed(`%c${title}`, 'color: #747574; font-size: 0.9rem');

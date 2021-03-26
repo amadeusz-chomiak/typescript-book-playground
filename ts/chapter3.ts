@@ -297,28 +297,28 @@ createChapter(chapter3, () => {
 
     testGroup("inheritance", "113 - 122", () => {
         test("inheritance of interfaces", 114, () => {
-            type sexType = "woman" | "male"
+            type gender = "woman" | "male"
 
             interface human {
                 name: string;
-                sex: sexType;
+                gender: gender;
             }
             interface wizard extends human {
                 spellLvl: number;
             }
             const merlin: wizard = {
                 name: "Merlin",
-                sex: "male",
+                gender: "male",
                 spellLvl: 23
             };
             log("merlin wizard and human", Object.values(merlin));
         });
 
         test("inheritance of classes", 114, () => {
-            type sexType = "woman" | "male"
+            type gender = "woman" | "male"
 
             class human {
-                constructor(private name: string, public sex: sexType) { }
+                constructor(private name: string, public gender: gender) { }
                 sayName() {
                     log("Hi I'm " + this.name);
                 }
@@ -335,17 +335,17 @@ createChapter(chapter3, () => {
         });
 
         test("super", 115, () => {
-            type sexType = "woman" | "male"
+            type gender = "woman" | "male"
 
             class human {
-                constructor(protected name: string, public sex: sexType) { }
+                constructor(protected name: string, public gender: gender) { }
                 sayName() {
-                    log(`Hi I'm ${this.sex} My name is ${this.name}`);
+                    log(`Hi I'm ${this.gender} My name is ${this.name}`);
                 }
             }
             class wizard extends human {
-                constructor(protected name: string, public sex: sexType, private magicType: string) {
-                    super(name, sex);
+                constructor(protected name: string, public gender: gender, private magicType: string) {
+                    super(name, gender);
                 }
 
                 castSpell() {
@@ -358,49 +358,49 @@ createChapter(chapter3, () => {
             }
             logWarning("To extend class you have to add \"super\" function in new constructor to pass new constructor values to parent class");
             const merlin = new wizard("Merlin", "male", "fire");
-            log("merlin: " + Object.values(merlin));
+            log("Merlin: " + Object.values(merlin));
             merlin.sayName();
             merlin.castSpell();
-            const Ashamed = new wizard("Ashamed", "male", "wind");
-            log("merlin: " + Object.values(Ashamed));
-            Ashamed.sayName();
-            Ashamed.castSpell();
+            const Harry = new wizard("Harry", "male", "wind");
+            log("Harry: " + Object.values(Harry));
+            Harry.sayName();
+            Harry.castSpell();
         });
         test("abstract", 118, () => {
-            type sexType = "woman" | "male"
+            type gender = "woman" | "male"
 
             abstract class human {
-                constructor(protected name: string, protected sex: sexType) { }
+                constructor(protected name: string, protected gender: gender) { }
                 abstract sayName(): void;
                 sayHi() {
                     log("Hi");
                 }
             }
             class wizard extends human {
-                constructor(protected name: string, protected sex: sexType, private magicType: string) {
-                    super(name, sex);
+                constructor(protected name: string, protected gender: gender, private magicType: string) {
+                    super(name, gender);
                 }
                 sayName() {
-                    log(`I'm ${this.magicType} wizard. My name is ${this.name} My sex is ${this.sex}`);
+                    log(`I'm ${this.magicType} wizard. My name is ${this.name} My gender is ${this.gender}`);
                 }
             }
             class king extends human {
-                constructor(protected name: string, protected sex: sexType, private country: string) {
-                    super(name, sex);
+                constructor(protected name: string, protected gender: gender, private country: string) {
+                    super(name, gender);
                 }
                 sayName() {
-                    log(`I'm a ruler of ${this.country}. My name is ${this.name} My sex is ${this.sex}`);
+                    log(`I'm a ruler of ${this.country}. My name is ${this.name} My gender is ${this.gender}`);
                 }
             }
             logWarning("Abstract class can only extend another class", "use only when you have to use methods inside otherwise use an Interface");
             const merlin = new wizard("Merlin", "male", "fire");
-            log("merlin: " + Object.values(merlin));
+            log("Merlin: " + Object.values(merlin));
             merlin.sayHi();
             merlin.sayName();
-            const Ashamed = new king("Ashamed", "male", "England");
-            log("merlin: " + Object.values(Ashamed));
+            const Henry = new king("Henry", "male", "England");
+            log("Henry: " + Object.values(Henry));
             merlin.sayHi();
-            Ashamed.sayName();
+            Henry.sayName();
         });
     });
 
@@ -424,12 +424,12 @@ createChapter(chapter3, () => {
             }
         }
         class Priest extends Hero {
-            canHeal() {
+            protected canHeal() {
                 return true;
             }
         }
         class Warrior extends Hero {
-            canHeal() {
+            protected canHeal() {
                 return false;
             }
         }
